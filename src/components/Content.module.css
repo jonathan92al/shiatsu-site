@@ -1,0 +1,98 @@
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+
+.heroContent {
+  max-width: 800px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  color: #5a6c57;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: #8b9d83;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #6b7c68;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton {
+  background: #8b9d83;
+  color: #fff;
+  padding: 16px 48px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(106, 124, 104, 0.3);
+  letter-spacing: 1px;
+}
+
+.ctaButton:hover {
+  background: #7a8c73;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 124, 104, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+    padding: 40px 20px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 14px 36px;
+    font-size: 1rem;
+  }
+}

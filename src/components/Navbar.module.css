@@ -1,0 +1,82 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop navigation - visible on large screens */
+.desktopNav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 35px;
+}
+
+.desktopNav li {
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #6b7c68;
+  letter-spacing: 0.5px;
+}
+
+.desktopNav li:hover {
+  color: #8b9d83;
+}
+
+/* Mobile icon - hidden on large screens */
+.mobileIcon {
+  display: none;
+  cursor: pointer;
+  color: #5a6c57;
+  transition: color 0.3s ease;
+}
+
+.mobileIcon:hover {
+  color: #8b9d83;
+}
+
+/* Mobile navigation - dropdown menu */
+.mobileNav {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  text-align: center;
+  padding: 20px 30px;
+  margin: 0;
+  background: rgba(248, 246, 243, 0.98);
+  color: #5a6c57;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(139, 157, 131, 0.2);
+  min-width: 150px;
+}
+
+.mobileNav li {
+  cursor: pointer;
+  margin: 15px 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #6b7c68;
+  letter-spacing: 0.5px;
+}
+
+.mobileNav li:hover {
+  color: #8b9d83;
+  transform: translateX(-3px);
+}
+
+/* Responsive - Show mobile menu on small screens */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileIcon {
+    display: block;
+  }
+}

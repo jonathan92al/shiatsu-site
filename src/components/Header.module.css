@@ -1,0 +1,74 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 50px;
+  background: rgba(248, 246, 243, 0.95);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139, 157, 131, 0.15);
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logoText {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.logoMain {
+  font-size: 1.8rem;
+  color: #5a6c57;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.logoBy {
+  font-size: 0.9rem;
+  color: #8b9d83;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 2px;
+}
+
+.logoName {
+  font-size: 1.8rem;
+  color: #6b7c68;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .logoMain {
+    font-size: 1.4rem;
+  }
+
+  .logoBy {
+    font-size: 0.75rem;
+  }
+
+  .logoName {
+    font-size: 1.4rem;
+  }
+}

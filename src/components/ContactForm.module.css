@@ -1,0 +1,194 @@
+/* Style for the entire form */
+.form {
+  background: #f8f6f3;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #e8e4dd;
+}
+
+.form h2 {
+  font-size: 1.8rem;
+  color: #5a6c57;
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* General control (input fields, selects, etc.) */
+.control {
+  margin-bottom: 24px;
+}
+
+.control label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #6b7c68;
+  font-size: 0.95rem;
+}
+
+/* Styling for text inputs and textarea */
+.control input,
+.control select,
+.control textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #d4cec4;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  resize: none;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+}
+
+.control input::placeholder,
+.control textarea::placeholder {
+  color: #a8a49d;
+}
+
+/* Focus state for inputs and selects */
+.control input:focus,
+.control select:focus,
+.control textarea:focus {
+  border-color: #8b9d83;
+  outline: none;
+  background: #fefefe;
+  box-shadow: 0 2px 8px rgba(106, 124, 104, 0.1);
+}
+
+/* Error styling for inputs */
+.error {
+  color: #c17b6d;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* Row for select and phone number input */
+.controlRow {
+  display: flex;
+  gap: 12px;
+}
+
+.controlRow select {
+  flex: 0 0 100px;
+}
+
+.controlRow input {
+  flex: 1;
+}
+
+/* Styling for the submit button */
+.formActions {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.formActions button {
+  background: #8b9d83;
+  color: #fff;
+  padding: 14px 45px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(106, 124, 104, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.formActions button:hover:not(:disabled) {
+  background: #7a8c73;
+  box-shadow: 0 4px 16px rgba(106, 124, 104, 0.3);
+  transform: translateY(-1px);
+}
+
+.formActions button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.formActions button:disabled {
+  background: #d4cec4;
+  color: #a8a49d;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Submit message styling */
+.submitMessage {
+  background: #f8f6f3;
+  padding: 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  border: 1px solid #e8e4dd;
+}
+
+.submitMessage h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+  color: #5a6c57;
+  letter-spacing: 1px;
+}
+
+.submitMessage p {
+  font-size: 1.1rem;
+  color: #6b7c68;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form {
+    padding: 35px 25px;
+    margin: 20px;
+  }
+
+  .form h2 {
+    font-size: 1.5rem;
+  }
+
+  .control input,
+  .control select,
+  .control textarea {
+    padding: 12px 14px;
+  }
+
+  .formActions button {
+    padding: 12px 35px;
+    font-size: 0.95rem;
+  }
+
+  .controlRow {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .controlRow select {
+    flex: 1;
+  }
+
+  .submitMessage {
+    padding: 40px 25px;
+    margin: 20px;
+  }
+
+  .submitMessage h2 {
+    font-size: 1.6rem;
+  }
+
+  .submitMessage p {
+    font-size: 1rem;
+  }
+}

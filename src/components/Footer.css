@@ -1,0 +1,27 @@
+.footer {
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+  background: rgba(248, 246, 243, 0.6);
+  border-top: 1px solid rgba(139, 157, 131, 0.2);
+}
+
+.footer i {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #8b9d83;
+}
+
+.footer i:hover {
+  color: #5a6c57;
+  transform: scale(1.1);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6b7c68;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
