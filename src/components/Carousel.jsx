@@ -17,6 +17,9 @@ const Carousel = () => {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [slidesToShow, setSlidesToShow] = useState(window.innerWidth > 768 ? 3 : 1);
   const timeoutRef = useRef(null);
+  const intervalRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const totalSlides = media.length;
   
@@ -39,12 +42,16 @@ const Carousel = () => {
   }, [totalSlides]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setCurrentIndex(prev => prev + 1);
       setIsTransitioning(true);
     }, 5000); // 5 seconds per slide
 
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -81,9 +88,53 @@ const Carousel = () => {
     setIsTransitioning(true);
   };
 
+  // Touch event handlers for swipe
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    // Clear auto-play interval when user starts swiping
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50; // Minimum distance for a swipe
+
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance > 0) {
+        // Swiped left - go to next slide
+        setCurrentIndex(prev => prev + 1);
+      } else {
+        // Swiped right - go to previous slide
+        setCurrentIndex(prev => prev - 1);
+      }
+      setIsTransitioning(true);
+    }
+
+    // Reset touch positions
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+
+    // Restart auto-play interval after swipe
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex(prev => prev + 1);
+      setIsTransitioning(true);
+    }, 5000);
+  };
+
   return (
     <div id="gallery" className={styles.carouselWrapper}>
-      <div className={styles.carouselContainer}>
+      <div 
+        className={styles.carouselContainer}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className={styles.carouselTrack} style={trackStyle}>
           {extendedMedia.map((item, idx) => (
             <div key={idx} className={styles.carouselSlide}>

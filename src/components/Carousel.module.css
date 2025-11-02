@@ -9,10 +9,23 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  touch-action: pan-y pinch-zoom;
 }
 
 .carouselTrack {
   display: flex;
+  user-select: none;
+}
+
+/* Grab cursor only on mobile */
+@media (max-width: 768px) {
+  .carouselContainer {
+    cursor: grab;
+  }
+
+  .carouselContainer:active {
+    cursor: grabbing;
+  }
 }
 
 .carouselSlide {
