@@ -88,7 +88,7 @@ export default function ContactForm() {
             <option value="054">054</option>
           </select>
           <input
-            type="text"
+            type="tel"
             id="phone"
             name="phone"
             value={phoneValue}

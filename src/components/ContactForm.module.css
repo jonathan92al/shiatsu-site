@@ -170,15 +170,6 @@
     font-size: 0.95rem;
   }
 
-  .controlRow {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .controlRow select {
-    flex: 1;
-  }
-
   .submitMessage {
     padding: 40px 25px;
     margin: 20px;
